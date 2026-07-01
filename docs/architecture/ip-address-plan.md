@@ -14,7 +14,7 @@
 | Brisbane HQ — Clients | 10.10.20.0/24 | VLAN 20 | 10.10.20.1 |
 | Brisbane HQ — Management | 10.10.30.0/24 | VLAN 30 | 10.10.30.1 |
 | Gold Coast Branch | 10.20.10.0/24 | VLAN 10 | 10.20.10.1 |
-| VPN (Remote Workers) | 10.99.0.0/24 | — | 10.99.0.1 |
+| Remote Access VPN (Remote Workers) | 10.99.0.0/24 | — | 10.99.0.1 |
 
 ---
 
@@ -56,7 +56,7 @@ Lease time: 8 hours
 | 10.20.10.1 | Gateway / Branch Firewall |
 | 10.20.10.100–150 | DHCP pool (workstations) |
 
-Site-to-site VPN connects Gold Coast to Brisbane HQ.
+Site-to-site VPN connects Gold Coast to Brisbane HQ (protocol TBD — IPSec / WireGuard).
 Gold Coast clients access \\BRIS-HO-FS01\ over VPN tunnel.
 
 ---

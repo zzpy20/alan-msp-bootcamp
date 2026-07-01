@@ -84,7 +84,7 @@ Laptop → VPN Client (SSL/IKEv2) → Brisbane Firewall → Internal network
 | Clients → Internet | VLAN 20 | Any | Allow |
 | Clients → Servers | VLAN 20 | VLAN 10 | Allow (specific ports only) |
 | Servers → Internet | VLAN 10 | Any | Allow (Windows Update, M365) |
-| VPN → Internal | 10.99.0.0/24 | 10.10.0.0/16 | Allow |
+| Remote Access VPN → Internal | 10.99.0.0/24 | 10.10.0.0/16 | Allow |
 | Site-to-Site | 10.20.0.0/16 | 10.10.0.0/16 | Allow |
 | All else | Any | Any | Deny (default) |
 

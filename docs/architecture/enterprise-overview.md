@@ -30,7 +30,8 @@
 | Windows Server | 2 x Windows Server 2022 |
 | Domain | ad.brightbuild.com.au |
 | NAS | Synology (file storage + backup) |
-| VPN | Site-to-site (Brisbane ↔ Gold Coast) + Remote Access |
+| Site-to-site VPN | Brisbane ↔ Gold Coast — protocol TBD (IPSec / WireGuard) |
+| Remote Access VPN | Remote workers — protocol TBD (SSL VPN / WireGuard / IKEv2) |
 | Firewall | Business-grade (pfSense/similar) |
 | Antivirus | Microsoft Defender (via Intune) |
 
