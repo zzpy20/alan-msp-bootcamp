@@ -25,14 +25,15 @@
 ```
 ad.brightbuild.com.au
 ├── _BRIGHTBUILD
-│   ├── Computers
-│   │   ├── Brisbane
-│   │   └── GoldCoast
 │   ├── Users
-│   │   ├── Brisbane
-│   │   └── GoldCoast
-│   ├── Groups
+│   │   ├── Finance
+│   │   ├── HR
+│   │   ├── Management
+│   │   ├── IT
+│   │   └── Operations
+│   ├── Computers
 │   ├── Servers
+│   ├── Groups
 │   └── ServiceAccounts
 └── Domain Controllers (default)
 ```
@@ -42,6 +43,9 @@ It sorts to the top of the OU list. When you manage 20 clients, you don't want t
 
 **Why a custom OU instead of using defaults?**
 Default containers (CN=Users, CN=Computers) cannot have Group Policy applied to them. All real deployments use custom OUs.
+
+**Why department-based OUs, not location-based?**
+Group Policy is almost always applied by department logic — Finance needs Finance drive mappings, Finance printers, Finance software — regardless of which office they sit in. A Gold Coast Finance user is still Finance. Location is an attribute on the user object (City, Office fields), not a structural container. If we used location-based OUs, we'd need duplicate GPOs for every department in every city. Department OUs scale cleanly as the company grows.
 
 ---
 
@@ -61,11 +65,11 @@ Default containers (CN=Users, CN=Computers) cannot have Group Policy applied to 
 
 | Name | Username | Dept | OU |
 |------|----------|------|----|
-| John Smith | john.smith | Finance | Users/Brisbane |
-| Sarah Jones | sarah.jones | HR | Users/Brisbane |
-| Mike Chen | mike.chen | IT | Users/Brisbane |
-| Lisa Brown | lisa.brown | Management | Users/Brisbane |
-| Tom Wilson | tom.wilson | Operations | Users/GoldCoast |
+| John Smith | john.smith | Finance | Users/Finance |
+| Sarah Jones | sarah.jones | HR | Users/HR |
+| Mike Chen | mike.chen | IT | Users/IT |
+| Lisa Brown | lisa.brown | Management | Users/Management |
+| Tom Wilson | tom.wilson | Operations | Users/Operations |
 
 ---
 
@@ -87,7 +91,9 @@ Default containers (CN=Users, CN=Computers) cannot have Group Policy applied to 
 | GPO Name | Applied To | Purpose |
 |----------|-----------|---------|
 | GPO-PasswordPolicy | Domain | Password complexity + expiry |
-| GPO-DriveMapping | Users/Brisbane | Map H: and shared drives |
+| GPO-DriveMapping-Finance | Users/Finance | Map H:, F: (Finance share) |
+| GPO-DriveMapping-HR | Users/HR | Map H:, R: (HR share) |
+| GPO-DriveMapping-AllStaff | Users | Map H:, S: (Shared) |
 | GPO-DesktopWallpaper | All Computers | Corporate wallpaper |
 | GPO-DisableUSB | All Computers | Block USB storage (security) |
 | GPO-WindowsUpdate | All Computers | Force updates via WSUS |
