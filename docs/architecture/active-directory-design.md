@@ -66,6 +66,9 @@ Group Policy is almost always applied by department logic — Finance needs Fina
 **Why no password expiry?**
 Microsoft removed periodic password expiry from their security baseline in 2019. Forced rotation produces weaker passwords — users increment numbers (`Password1!` → `Password2!`) rather than choosing stronger ones. Modern identity security relies on MFA + Conditional Access + breach detection, not rotation. If a password is compromised, Entra ID Protection detects the risky sign-in and blocks it — expiry wouldn't have helped anyway.
 
+**Why not WSUS?**
+WSUS requires a dedicated server, disk storage for update files, and ongoing maintenance. For a 35-user company this is unnecessary overhead. Windows Update for Business (WUfB) delivers the same control (deferral rings, targeting) via GPO with no server. Phase 2 migrates this to Intune, which is already included in their M365 Business Premium licence.
+
 **Modern Identity stack (Phase 2 — Sprint 3+):**
 - Entra ID MFA (already enforced)
 - Conditional Access policies (block legacy auth, require MFA from outside office)
@@ -107,7 +110,7 @@ Microsoft removed periodic password expiry from their security baseline in 2019.
 | GPO-DriveMapping-AllStaff | Users | Map H:, S: (Shared) |
 | GPO-DesktopWallpaper | All Computers | Corporate wallpaper |
 | GPO-DisableUSB | All Computers | Block USB storage (security) |
-| GPO-WindowsUpdate | All Computers | Force updates via WSUS |
+| GPO-WindowsUpdate | All Computers | Windows Update for Business — defer feature updates 30 days, quality updates 7 days |
 | GPO-LocalAdminRestrict | All Computers | Remove local admin from standard users |
 | GPO-ScreenLock | All Computers | Lock after 10 min idle |
 
