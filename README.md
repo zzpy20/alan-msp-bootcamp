@@ -51,6 +51,16 @@ alan-msp-bootcamp/
 
 ---
 
+## Current Progress
+
+See [PROGRESS.md](PROGRESS.md) for full skill tracker.
+
+```
+MSP Job Readiness     ████░░░░░░  35%   Sprint 0 complete — Sprint 1 starting
+```
+
+---
+
 ## Design Principles
 
 > **[ADR-0001](docs/decisions/ADR-0001-design-principles.md) — Every design decision must satisfy:**

@@ -42,6 +42,10 @@ Format follows [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ### Decisions
 - **ADR-0001:** All designs must satisfy Enterprise Standard → MSP Reality → SMB Budget. Not Microsoft's luxury solution — what a real Brisbane MSP deploys for 30–100 person clients.
+- **ADR-0002:** Optimise for employability, not knowledge. Only learn what a Junior MSP Engineer in Brisbane encounters in their first 6 months.
+
+### Added (continued)
+- `PROGRESS.md` — skill readiness dashboard with defined level criteria (0/25/50/75/100%) and Brisbane MSP job frequency weighting
 
 ### Deferred
 - DNS Design session (forwarder selection, split DNS, conditional forwarders)
