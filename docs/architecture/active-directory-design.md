@@ -10,7 +10,8 @@
 
 | Field | Value |
 |-------|-------|
-| Domain Name | brightbuild.local |
+| Domain Name | ad.brightbuild.com.au |
+| Why not .local? | `.local` conflicts with mDNS, breaks certificate issuance, complicates Entra ID sync. Microsoft stopped recommending it years ago. |
 | Forest / Domain Level | Windows Server 2022 |
 | Domain Controller | BRIS-HO-DC01 (10.10.10.10) |
 | Secondary DC | GC-BR-DC01 (future — Sprint 3) |
@@ -22,7 +23,7 @@
 ## OU Structure
 
 ```
-brightbuild.local
+ad.brightbuild.com.au
 ├── _BRIGHTBUILD
 │   ├── Computers
 │   │   ├── Brisbane
@@ -111,7 +112,7 @@ Default containers (CN=Users, CN=Computers) cannot have Group Policy applied to 
 Build this and confirm with screenshots:
 
 - [ ] Install AD DS on BRIS-HO-DC01
-- [ ] Promote to Domain Controller (domain: brightbuild.local)
+- [ ] Promote to Domain Controller (domain: ad.brightbuild.com.au)
 - [ ] Create OU structure as designed above
 - [ ] Create 5 sample users
 - [ ] Create security groups and add users

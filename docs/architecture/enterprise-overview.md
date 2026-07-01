@@ -28,7 +28,7 @@
 | Microsoft 365 | Business Premium |
 | Azure | Yes — VM, Backup, VPN |
 | Windows Server | 2 x Windows Server 2022 |
-| Domain | brightbuild.local |
+| Domain | ad.brightbuild.com.au |
 | NAS | Synology (file storage + backup) |
 | VPN | Site-to-site (Brisbane ↔ Gold Coast) + Remote Access |
 | Firewall | Business-grade (pfSense/similar) |

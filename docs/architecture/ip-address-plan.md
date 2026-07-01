@@ -69,7 +69,7 @@ Gold Coast clients access \\BRIS-HO-FS01\ over VPN tunnel.
 | 8.8.8.8 | External forwarder | — |
 
 All internal clients point to 10.10.10.10 as DNS server.
-Domain: brightbuild.local (internal)
+Domain: ad.brightbuild.com.au (internal)
 Public domain: brightbuild.com.au (Cloudflare)
 
 ---

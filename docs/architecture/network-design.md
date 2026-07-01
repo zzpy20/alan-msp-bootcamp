@@ -106,7 +106,7 @@ Laptop → VPN Client (SSL/IKEv2) → Brisbane Firewall → Internal network
 A staff laptop getting a virus should not be able to directly scan and attack the domain controller. VLAN separation + firewall rules limit the blast radius.
 
 **Why Cloudflare for public DNS?**
-Already familiar with it, DDoS protection built in, fast propagation. Internal DNS (brightbuild.local) is handled by the Domain Controller.
+Already familiar with it, DDoS protection built in, fast propagation. Internal DNS (ad.brightbuild.com.au) is handled by the Domain Controller.
 
 **Why not put everything in Azure first?**
 Real SMBs in Australia still run on-premise Windows Server + AD as the core, then extend to cloud. We're building it the way it exists in the real world, not the way Microsoft wants you to buy licences.
