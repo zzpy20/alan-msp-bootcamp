@@ -65,12 +65,14 @@ Gold Coast clients access \\BRIS-HO-FS01\ over VPN tunnel.
 
 | Server | Role | IP |
 |--------|------|-----|
-| BRIS-HO-DC01 | Primary DNS | 10.10.10.10 |
-| 8.8.8.8 | External forwarder | — |
+| BRIS-HO-DC01 | Primary DNS (internal) | 10.10.10.10 |
+| Firewall / 1.1.1.1 | External forwarder (TBD) | — |
 
 All internal clients point to 10.10.10.10 as DNS server.
 Domain: ad.brightbuild.com.au (internal)
 Public domain: brightbuild.com.au (Cloudflare)
+
+> **Note:** External DNS forwarder to be confirmed during DNS Design session. Options: firewall upstream DNS, ISP DNS, or Cloudflare 1.1.1.1. Avoid Google 8.8.8.8 in enterprise environments (privacy, logging).
 
 ---
 
