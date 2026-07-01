@@ -56,10 +56,21 @@ Group Policy is almost always applied by department logic — Finance needs Fina
 | Field | Value |
 |-------|-------|
 | UPN Format | firstname.lastname@brightbuild.com.au |
-| Password Policy | Min 12 chars, complexity on, 90-day expiry |
-| MFA | Required (enforced via Entra ID) |
+| Password Policy | Min 12 chars, complexity on, **no expiry** |
+| MFA | Required for all users (Entra ID) |
+| Conditional Access | Block legacy auth, enforce MFA, require compliant device |
+| Risk Detection | Entra ID Protection — auto-block risky sign-ins |
 | Home Drive | \\BRIS-HO-FS01\Users\%username% (H:) |
 | Logon Script | GPO-applied (map drives, set printers) |
+
+**Why no password expiry?**
+Microsoft removed periodic password expiry from their security baseline in 2019. Forced rotation produces weaker passwords — users increment numbers (`Password1!` → `Password2!`) rather than choosing stronger ones. Modern identity security relies on MFA + Conditional Access + breach detection, not rotation. If a password is compromised, Entra ID Protection detects the risky sign-in and blocks it — expiry wouldn't have helped anyway.
+
+**Modern Identity stack (Phase 2 — Sprint 3+):**
+- Entra ID MFA (already enforced)
+- Conditional Access policies (block legacy auth, require MFA from outside office)
+- Entra ID Protection (risk-based sign-in blocking)
+- Password Protection (ban common/weak passwords via Entra)
 
 ### Sample Users to Create in Lab
 
