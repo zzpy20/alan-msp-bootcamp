@@ -51,6 +51,16 @@ alan-msp-bootcamp/
 
 ---
 
+## Design Principles
+
+> **[ADR-0001](docs/decisions/ADR-0001-design-principles.md) — Every design decision must satisfy:**
+> ```
+> Enterprise Standard → MSP Reality → SMB Budget
+> ```
+> Not Microsoft's most expensive solution. What a real Brisbane MSP deploys for a 30–100 person client.
+
+---
+
 ## Bootcamp Rules
 
 1. **Everything has a reason** — we only learn what Brisbane MSP jobs actually require

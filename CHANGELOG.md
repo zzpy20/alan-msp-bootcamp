@@ -40,6 +40,9 @@ Format follows [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
   - Site-to-site (Brisbane ↔ Gold Coast): IPSec / WireGuard — TBD
   - Remote Access (remote workers): SSL VPN / WireGuard / IKEv2 — TBD
 
+### Decisions
+- **ADR-0001:** All designs must satisfy Enterprise Standard → MSP Reality → SMB Budget. Not Microsoft's luxury solution — what a real Brisbane MSP deploys for 30–100 person clients.
+
 ### Deferred
 - DNS Design session (forwarder selection, split DNS, conditional forwarders)
 - VPN Design session (protocol selection for site-to-site and remote access)
