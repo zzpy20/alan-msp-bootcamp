@@ -26,7 +26,7 @@
 | Hostname | Role | Location |
 |----------|------|----------|
 | BRIS-HO-DC01 | Domain Controller (Primary) | Brisbane HQ |
-| BRIS-HO-FS01 | File Server / Print Server | Brisbane HQ |
+| BRIS-HO-FS01 | File Services / Print Services | Brisbane HQ |
 | GC-BR-DC01 | Domain Controller (Secondary) — future | Gold Coast |
 
 ---

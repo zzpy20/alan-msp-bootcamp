@@ -27,7 +27,8 @@
         |             |         (DHCP from DC01)
    BRIS-HO-DC01  BRIS-HO-FS01
    10.10.10.10   10.10.10.11
-   AD/DNS/DHCP   Files/Print
+   AD/DNS/DHCP   File Services
+                 Print Services
         |
         |        Microsoft 365
         |        Exchange Online

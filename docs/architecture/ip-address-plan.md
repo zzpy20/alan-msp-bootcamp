@@ -25,7 +25,7 @@
 | 10.10.10.1 | — | Gateway / Firewall |
 | 10.10.10.2 | — | Core Switch (management IP) |
 | 10.10.10.10 | BRIS-HO-DC01 | Domain Controller |
-| 10.10.10.11 | BRIS-HO-FS01 | File Server / Print Server |
+| 10.10.10.11 | BRIS-HO-FS01 | File Services / Print Services |
 | 10.10.10.20 | NAS01 | Synology NAS |
 | 10.10.10.100–199 | — | Reserved for future servers |
 
